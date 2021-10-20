@@ -1,0 +1,18 @@
+.addshopmain-container {
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+.addshopmain-container .container-fluid {
+  padding-top: 3rem;
+}
+.addshop-container {
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.addshop-container .form-group {
+  margin: 8px;
+}
+.addshop-container button {
+  margin: 20px;
+}
