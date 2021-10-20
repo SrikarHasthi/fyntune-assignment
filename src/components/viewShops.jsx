@@ -66,7 +66,7 @@ let ViewShops = () => {
             <div className="filter-container row">
               <div className="col-xs-12 col-sm-12 col-md-12 filter">
                 <div className="m-2">
-                  <label for="inputarea" className=" col-form-label">
+                  <label htmlFor="inputarea" className=" col-form-label">
                     Area
                   </label>{" "}
                   <select
@@ -83,7 +83,7 @@ let ViewShops = () => {
                   </select>
                 </div>
                 <div className="m-2">
-                  <label for="inputcategory" className=" col-form-label">
+                  <label htmlFor="inputcategory" className=" col-form-label">
                     Category
                   </label>
                   <select
@@ -100,7 +100,7 @@ let ViewShops = () => {
                   </select>
                 </div>
                 <div className="m-2">
-                  <label for="inputstatus" className="col-form-label">
+                  <label htmlFor="inputstatus" className="col-form-label">
                     Status
                   </label>
                   <select

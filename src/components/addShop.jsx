@@ -30,7 +30,7 @@ let AddShop = () => {
           <div className="addshop-container col-xl-6 col-lg-6 col-md-6 col-sm-12 mx-auto">
             <form>
               <div className="form-group row">
-                <label for="inputshopname" className="col-sm-3 col-form-label">
+                <label htmlFor="inputshopname" className="col-sm-3 col-form-label">
                   Shop Name :
                 </label>
                 <div className="col-sm-4">
@@ -48,7 +48,7 @@ let AddShop = () => {
                 </div>
               </div>
               <div className="form-group row">
-                <label for="inputarea" className="col-sm-3 col-form-label">
+                <label htmlFor="inputarea" className="col-sm-3 col-form-label">
                   Area :
                 </label>
                 <div className="col-sm-4">
@@ -67,7 +67,7 @@ let AddShop = () => {
                 </div>
               </div>
               <div className="form-group row">
-                <label for="inputcategory" className="col-sm-3 col-form-label">
+                <label htmlFor="inputcategory" className="col-sm-3 col-form-label">
                   Category :
                 </label>
                 <div className="col-sm-4">
@@ -88,7 +88,7 @@ let AddShop = () => {
                 </div>
               </div>
               <div className="form-group row">
-                <label for="inputopeningdate" className="col-sm-3 col-form-label">
+                <label htmlFor="inputopeningdate" className="col-sm-3 col-form-label">
                   Opening Date :
                 </label>
                 <div className="col-sm-4">
@@ -103,7 +103,7 @@ let AddShop = () => {
                 </div>
               </div>
               <div className="form-group row">
-                <label for="inputenddate" className="col-sm-3 col-form-label">
+                <label htmlFor="inputenddate" className="col-sm-3 col-form-label">
                   Ending Date :
                 </label>
                 <div className="col-sm-4">
