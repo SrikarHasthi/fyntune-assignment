@@ -1,5 +1,5 @@
 .addshopmain-container {
-  height: 100vh;
+  min-height: 100vh;
   background-color: #f2f2f2;
 }
 .addshopmain-container .container-fluid {
@@ -9,10 +9,14 @@
   padding: 1rem;
   background-color: #fff;
   border-radius: 10px;
+  margin-bottom: 2rem;
 }
 .addshop-container .form-group {
   margin: 8px;
 }
 .addshop-container button {
   margin: 20px;
+}
+.form-group p{
+  color: red;
 }
