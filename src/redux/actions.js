@@ -3,6 +3,7 @@ import {
   AREA_SELECTED,
   CATEGORY_FILTER,
   CATEGORY_SELECTED,
+  RESET_DATA,
   SHOP_DATA,
   SHOP_DATA_ARRAY,
   SHOP_DATA_ARRAY_DELETE,
@@ -56,5 +57,10 @@ export const statusfilter = (value) => {
   return {
     type: STATUS_FILTER,
     payload: value,
+  };
+};
+export const resetdata = () => {
+  return {
+    type: RESET_DATA,
   };
 };

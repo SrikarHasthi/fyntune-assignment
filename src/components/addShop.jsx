@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import "../css/addshop.css";
-import { setshopdata, shopdataarray } from "../redux/actions";
+import { resetdata, setshopdata, shopdataarray } from "../redux/actions";
 let AddShop = () => {
   let areaArray = [
     "None",
@@ -22,23 +22,25 @@ let AddShop = () => {
     "Stationery shop",
   ];
   let dispatch = useDispatch();
-  let history=useHistory();
-  let minDate="1980-01-01";
+  let history = useHistory();
+  let minDate = "1980-01-01";
   let data = useSelector((state) => state.shopData);
-  let [formErrors,setFormErrors]=useState({});
-  let handleformvalidation=()=>{
-    const {shop_name,area,category,opening_date,closing_date}=data;
-    let formErrors={}
-    let isformValid=true;
-    if(!shop_name){
-      isformValid=false;
-      formErrors["shopnameerr"]="Shop Name is required";
+  console.log(data);
+  let [formErrors, setFormErrors] = useState({});
+  // let [isFormValid,setIsFormValid]=useState(true);
+  let handleformvalidation = () => {
+    const { shop_name, area, category, opening_date, closing_date } = data;
+    let formErrors = {};
+    let isformValid = true;
+    if (!shop_name) {
+      isformValid = false;
+      formErrors["shopnameerr"] = "Shop Name is required";
     }
-    if(shop_name){
-      let regEx = /^[A-Za-z]+$/;
-      if(!(shop_name.match(regEx))){
-        isformValid=false;
-      formErrors["shopnameerr"]="Alphabets Only";
+    if (shop_name) {
+      let regEx = /^[A-Za-z ]+$/;
+      if (!shop_name.match(regEx)) {
+        isformValid = false;
+        formErrors["shopnameerr"] = "Alphabets Only";
       }
     }
     if (!area) {
@@ -57,21 +59,19 @@ let AddShop = () => {
       isformValid = false;
       formErrors["closingdateerr"] = "Select Date";
     }
-
     setFormErrors(formErrors);
     return isformValid;
-  }
-  let handleSubmit=(e)=>{
+  };
+  let handleSubmit = (e) => {
     e.preventDefault();
-    if(handleformvalidation()){
-       dispatch(shopdataarray(data));
-       alert("Shop Added");
-       history.push("/");
+    if (handleformvalidation()) {
+      dispatch(shopdataarray(data));
+      alert("Shop Added");
+      dispatch(resetdata());
+      history.push("/");
+    } else {
     }
-    else{
-
-    }
-  }
+  };
   return (
     <>
       <div className="addshopmain-container">
@@ -116,9 +116,13 @@ let AddShop = () => {
                     className="form-select"
                     aria-label="Default select example"
                   >
-                    <option selected>Select ...</option>
-                    {areaArray.map((e) => {
-                      return <option value={e}>{e}</option>;
+                    <option defaultValue>Select ...</option>
+                    {areaArray.map((e, index) => {
+                      return (
+                        <option key={index} value={e}>
+                          {e}
+                        </option>
+                      );
                     })}
                   </select>
                   {formErrors.areaerr ? <p>{formErrors.areaerr}</p> : ""}
@@ -141,9 +145,13 @@ let AddShop = () => {
                     className="form-select"
                     aria-label="Default select example"
                   >
-                    <option selected>Select ...</option>
-                    {categoryArray.map((e) => {
-                      return <option value={e}>{e}</option>;
+                    <option defaultValue>Select ...</option>
+                    {categoryArray.map((e, index) => {
+                      return (
+                        <option key={index} value={e}>
+                          {e}
+                        </option>
+                      );
                     })}
                   </select>
                   {formErrors.categoryerr ? (

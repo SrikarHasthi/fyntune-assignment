@@ -76,9 +76,9 @@ let ViewShops = () => {
                     className="form-select"
                     aria-label="Default select example"
                   >
-                    <option selected>Select ...</option>
-                    {areaArray.map((e) => {
-                      return <option value={e}>{e}</option>;
+                    <option defaultValue>Select ...</option>
+                    {areaArray.map((e,index) => {
+                      return <option key={index} value={e}>{e}</option>;
                     })}
                   </select>
                 </div>
@@ -93,9 +93,9 @@ let ViewShops = () => {
                     className="form-select"
                     aria-label="Default select example"
                   >
-                    <option selected>Select ...</option>
-                    {categoryArray.map((e) => {
-                      return <option value={e}>{e}</option>;
+                    <option defaultValue>Select ...</option>
+                    {categoryArray.map((e,index) => {
+                      return <option key={index} value={e}>{e}</option>;
                     })}
                   </select>
                 </div>
@@ -110,9 +110,9 @@ let ViewShops = () => {
                     className="form-select"
                     aria-label="Default select example"
                   >
-                    <option selected>Select ...</option>
-                    {statusArray.map((e) => {
-                      return <option value={e}>{e}</option>;
+                    <option defaultValue>Select ...</option>
+                    {statusArray.map((e,index) => {
+                      return <option key={index} value={e}>{e}</option>;
                     })}
                   </select>
                 </div>
